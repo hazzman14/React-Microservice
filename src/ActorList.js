@@ -12,7 +12,7 @@ class ActorList extends Component {
     }
 
     componentDidMount() {
-        fetch('http://18.168.164.47:8181/api/actors/all', { mode: 'no-cors'})
+        fetch('http://18.168.164.47:8181/api/actors/all')
             .then(response => response.json())
             .then(data => this.setState({actors: data}));
     }
