@@ -2,7 +2,7 @@
   "name": "ui",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://18.168.164.47:8181/",
+  "proxy": "18.168.164.47:8181/",
   "dependencies": {
     "@aws-amplify/ui-react": "^1.2.1",
     "@material-ui/core": "^4.11.4",
