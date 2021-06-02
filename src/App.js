@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ActorList from "./ActorList";
+import Home from './Home';
+import CategoryList from "./CategoryList";
+import FilmList from "./FilmList";
+import ActorEdit from "./ActorEdit";
+import ActorCreate from "./ActorCreate";
+
+
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <Switch>
+                    <Route path='/' exact={true} component={Home}/>
+                    <Route path='/actors' exact={true} component={ActorList}/>
+                    <Route path='/categories' exact={true} component={CategoryList}/>
+                    <Route path='/films' exact={true} component={FilmList}/>
+                    <Route path='/actors/edit/:id' component={ActorEdit}/>
+                    <Route path='/actors/create' component={ActorCreate}/>
+                </Switch>
+            </Router>
+        )
+    }
 }
 
 export default App;
