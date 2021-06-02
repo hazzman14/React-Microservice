@@ -12,7 +12,7 @@ class FilmList extends Component {
     }
 
     componentDidMount() {
-        fetch('/api/films/all')
+        fetch('http://18.168.164.47:8181/api/films/all')
             .then(response => response.json())
             .then(data => this.setState({films: data}));
     }
@@ -43,7 +43,7 @@ class FilmList extends Component {
                 <AppNavbar/>
                 <Container fluid>
                     <div className="float-right">
-                        <Button color="success" tag={Link} to="/api/categories/create">Add Category</Button>
+                        <Button color="success" tag={Link} to="http://18.168.164.47:8181/api/categories/create">Add Category</Button>
                     </div>
                     <p></p>
                     <h3>List of Films </h3>

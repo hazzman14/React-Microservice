@@ -18,7 +18,7 @@ class ActorList extends Component {
     }
 
     async remove(id) {
-        await fetch(`/api/actors/${id}`, {
+        await fetch(`http://18.168.164.47:8181/api/actors/${id}`, {
             method: 'DELETE',
             headers: {
                 'Accept': 'application/json',
