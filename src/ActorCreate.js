@@ -22,7 +22,7 @@ class ActorCreate extends Component {
 
     async componentDidMount() {
         if (this.props.match.params.id !== 'new') {
-            const actor = await (await fetch(`/api/actors/byid/${this.props.match.params.id}`)).json();
+            const actor = await (await fetch(`http://18.168.164.47:8181/api/actors/byid/${this.props.match.params.id}`)).json();
             this.setState({item: actor});
         }
     }
