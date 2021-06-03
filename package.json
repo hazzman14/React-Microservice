@@ -1,6 +1,7 @@
 {
   "name": "e2eui",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "proxy": "http://18.168.164.47:8181/",
   "dependencies": {
