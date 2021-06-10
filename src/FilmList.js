@@ -32,7 +32,12 @@ class FilmList extends Component {
                 <td>{film.rating}</td>
                 <td>{film.lengthMinutes}</td>
                 <td>{film.releaseYear}</td>
-
+                <td>
+                    <ButtonGroup>
+                        <Button size="sm" color="primary" tag={Link} to={"/films/edit/" + film.id}>Edit</Button>
+                        <Button size="sm" color="danger" onClick={() => this.remove(film.id)}>Delete</Button>
+                    </ButtonGroup>
+                </td>
 
 
             </tr>
@@ -43,7 +48,7 @@ class FilmList extends Component {
                 <AppNavbar/>
                 <Container fluid>
                     <div className="float-right">
-                        <Button color="success" tag={Link} to="http://18.168.164.47:8181/api/categories/create">Add Category</Button>
+                        <Button color="success" tag={Link} to="/films/create">Add Film</Button>
                     </div>
                     <p></p>
                     <h3>List of Films </h3>
