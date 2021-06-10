@@ -8,8 +8,8 @@ class FilmCreate extends Component {
     emptyItem = {
         description: '',
         title: '',
-        releaseYear: ,
-        lengthMinutes:
+        releaseYear: '' ,
+        lengthMinutes: ''
     };
 
     constructor(props) {
