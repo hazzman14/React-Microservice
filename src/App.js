@@ -9,7 +9,8 @@ import CategoryList from "./CategoryList";
 import FilmList from "./FilmList";
 import ActorEdit from "./ActorEdit";
 import ActorCreate from "./ActorCreate";
-
+import FilmEdit from "./FilmEdit";
+import FilmActor from "./FilmActors";
 
 class App extends Component {
     render() {
@@ -23,6 +24,8 @@ class App extends Component {
                     <Route path='/actors/edit/:id' component={ActorEdit}/>
                     <Route path='/actors/create' component={ActorCreate}/>
                     <Route path='/films/create' component={FilmCreate}/>
+                    <Route path='/films/edit/:id' component={FilmEdit}/>
+                    <Route path='/films/actors/:id' component={FilmActor}/>
                 </Switch>
             </Router>
         )

@@ -36,6 +36,7 @@ class FilmList extends Component {
                     <ButtonGroup>
                         <Button size="sm" color="primary" tag={Link} to={"/films/edit/" + film.id}>Edit</Button>
                         <Button size="sm" color="danger" onClick={() => this.remove(film.id)}>Delete</Button>
+                        <Button size="sm" color="info" tag={Link} to={"/films/edit/" + film.id}>View Worked Actors</Button>
                     </ButtonGroup>
                 </td>
 
