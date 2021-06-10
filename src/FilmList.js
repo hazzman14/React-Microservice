@@ -16,6 +16,19 @@ class FilmList extends Component {
             .then(response => response.json())
             .then(data => this.setState({films: data}));
     }
+    async remove(id) {
+        await fetch(`http://18.168.164.47:8181/api/films/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(() => {
+            let updatedFilms = [...this.state.films].filter(i => i.id !== id);
+            this.setState({films: updatedFilms});
+        });
+    }
+
 
     render() {
         const {films, isLoading} = this.state;
@@ -36,7 +49,7 @@ class FilmList extends Component {
                     <ButtonGroup>
                         <Button size="sm" color="primary" tag={Link} to={"/films/edit/" + film.id}>Edit</Button>
                         <Button size="sm" color="danger" onClick={() => this.remove(film.id)}>Delete</Button>
-                        <Button size="sm" color="info" tag={Link} to={"/films/edit/" + film.id}>View Worked Actors</Button>
+                        <Button size="sm" color="info" tag={Link} to={"/films/actors/" + film.id}>View Worked Actors</Button>
                     </ButtonGroup>
                 </td>
 
